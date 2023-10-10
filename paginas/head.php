@@ -39,7 +39,7 @@
                 <div class="sidebar-brand-icon">
 
                     <!-- logo de ;)  https://fontawesome.com/search aqui se descargan -->
-                    <i class="fas fa-solid fa-user"></i>
+                    <i class="fas fa-solid fa-folder-open"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Vivero Canaán</div>
             </a>
@@ -51,86 +51,73 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="../paginas/index.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-cog"></i>
                     <span>Inicio</span></a>
             </li>
 
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
+
+            <!-- Empleado -->
             <div class="sidebar-heading">
                 Empleado
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+    
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="../Empleados/index.php"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-solid fa-user"></i>
                     <span>Empleados</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Empleado:</h6>
-                        <a class="collapse-item" href="../Empleados/index.php">Agregar Empleado</a>
-
-                    </div>
-                </div>
-            </li>
             
+            </li>
+            <!-- Linea de separaciom -->
             <hr class="sidebar-divider my-0">
+
+            <!-- Cliente -->
             <div class="sidebar-heading">
                 Cliente
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="../Clientes/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-solid fa-users"></i>
                     <span>Clientes</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Cliente:</h6>
-                        <a class="collapse-item" href="../Clientes/index.php">Agregar Cliente</a>
-
-                    </div>
-                </div>
+                
             </li>
 
+            <!-- Linea de separacion  -->
+
             <hr class="sidebar-divider my-0">
+
+            <!-- Artículo -->
             <div class="sidebar-heading">
                 Artículo
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="../Articulo/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-solid fa-seedling"></i>
                     <span>Artículos</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Artículo:</h6>
-                        <a class="collapse-item" href="../Artículo/index.php">Agregar Artículo</a>
 
-                    </div>
-                </div>
             </li>
 
+            <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
+
+            <!-- Factura -->
             <div class="sidebar-heading">
                 Factura
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <a class="nav-link collapsed" href="../Factura/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
                     <span>Facturas</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos de la Factura:</h6>
-                        <a class="collapse-item" href="../Factura/index.php">Agregar Factura</a>
-
-                    </div>
-                </div>
+               
             </li>
 
             <!-- Linea de separacion  -->
