@@ -32,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar" style="background: linear-gradient(to right,  #527502, #527502);">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../paginas/index.php">
@@ -149,7 +149,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-success" type="button">
+                                <button class="btn btn-success" type="button" style="background: linear-gradient(to right,  #527502, #527502);">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
