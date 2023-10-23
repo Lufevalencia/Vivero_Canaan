@@ -104,6 +104,22 @@
 
             </li>
 
+             <!-- Linea de separacion  -->
+             <hr class="sidebar-divider my-0">
+
+              <!-- Factura -->
+              <div class="sidebar-heading">
+               Proveedor
+              </div>
+
+              <li class="nav-item">
+               <a class="nav-link collapsed" href="../Proveedor/index.php" aria-expanded="true" aria-controls="collapseTwo">
+               <i class=" fas fa-solid fa-user-tie"></i>
+              <span>Proveedor</span>
+             </a>
+   
+            </li>
+
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
@@ -119,6 +135,8 @@
                 </a>
                
             </li>
+
+
 
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">

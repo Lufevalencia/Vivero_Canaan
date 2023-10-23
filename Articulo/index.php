@@ -28,42 +28,25 @@
 
                             <div class="form-row">
 
-                                <!-- <label for="txtId">Id</label> -->
-                                <input type="hidden" require name="txtId" id="txtId" placeholder="" value="<?php echo $txtId ?>">
-                                <!-- <br> -->
+                             <input type="hidden" require name="Id_art" id="Id_art" placeholder="" value="<?php echo $Id_art ?>">
 
-                                <div class="form-group col-md-12">
-                                    <label for="txtNombre">Código</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
-                                    <br>
-                                </div>
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoP">Nombre</label>
-                                    <input type="text" class="form-control" require name="txtApellidoP" id="txtApellidoP" placeholder="" value="<?php echo $txtApellidoP ?>">
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Descripción </label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
+                                    <label for="Nom_art">Nombre</label>
+                                    <input type="text" class="form-control" require name="Nom_art" id="Nom_art" placeholder="" value="<?php echo $Nom_art ?>">
 
                                 </div>
 
                                 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Precio</label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
+                                    <label for="Precio">Precio</label>
+                                    <input type="text" class="form-control" require name="Precio" id="Precio" placeholder="" value="<?php echo $Precio ?>">
 
                                 </div>
 
                                
-                                <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Fecha</label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
-
-                                </div>
+                            
 
 
 
@@ -106,10 +89,8 @@
 
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Descripción</th>
+                        <th scope="col">Nombre artículo</th>
                         <th scope="col">Precio</th>
-                        <th scope="col">Fecha</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -120,36 +101,30 @@
 
                     <?php
                     /* Prefunto que si la variable listaEmpleados tiene algun contenido */
-                    if ($listaEmpleados->num_rows > 0) {
+                    if ($listaArticulo->num_rows > 0) {
 
-                        foreach ($listaEmpleados as $empleado) {
+                        foreach ($listaArticulo as $Articulo) {
 
 
                     ?>
 
                             <tr>
 
-                                <td>
-                                    <img class="img-thumbnail" width="100px" src="../Imagenes/Empleados/<?php echo $empleado['foto']; ?>" />
+                            
 
-                                </td>
-
-                                <td> <?php echo $empleado['id']        ?> </td>
-                                <td> <?php echo $empleado['nombre']    ?> </td>
-                                <td> <?php echo $empleado['apellidoP'] ?> </td>
-                                <td> <?php echo $empleado['apellidoM'] ?> </td>
-                                <td> <?php echo $empleado['correo']    ?> </td>
+                                <td> <?php echo $Articulo['Id_art']        ?> </td>
+                                <td> <?php echo $Articulo['Nom_art']    ?> </td>
+                                <td> <?php echo $Articulo['Precio'] ?> </td>
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="txtId" value="<?php echo $empleado['id'];  ?>">
-                                    <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
-                                    <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">
-                                    <input type="hidden" name="txtCorreo" value="<?php echo $empleado['correo'];  ?>">
-                                    <input type="hidden" name="foto" value="<?php echo $empleado['foto'];  ?>">
+                                    <input type="hidden" name="Id_art" value="<?php echo $Articulo['Id_art'];  ?>">
+                                    <input type="hidden" name="Nom_art" value="<?php echo $Articulo['Nom_art'];  ?>">
+                                    <input type="hidden" name="Precio" value="<?php echo $Articulo['Precio'];  ?>">
+                                    
+                                    
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>

@@ -8,6 +8,7 @@ include("../Conexion/conexion.php");
 
 //Recibimos las variables enviadas
 $txtId = (isset($_POST['txtId'])) ? $_POST['txtId'] : "";
+$documento = (isset($_POST['documento'])) ? $_POST['documento'] : "";
 $txtNombre = (isset($_POST['txtNombre'])) ? $_POST['txtNombre'] : "";
 $txtApellidoP = (isset($_POST['txtApellidoP'])) ? $_POST['txtApellidoP'] : "";
 $txtApellidoM = (isset($_POST['txtApellidoM'])) ? $_POST['txtApellidoM'] : "";
@@ -47,9 +48,9 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionEmpleados = $conn->prepare(
-                    "INSERT INTO empleados(nombre, apellidoP, 
+                    "INSERT INTO empleados(documento, nombre, apellidoP, 
                 apellidoM, correo, foto) 
-                VALUES ('$txtNombre','$txtApellidoP','$txtApellidoM','$txtCorreo','$foto')"
+                VALUES ('$documento','$txtNombre','$txtApellidoP','$txtApellidoM','$txtCorreo','$foto')"
                 );
 
 
@@ -78,7 +79,7 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarEmpleados = $conn->prepare(" UPDATE empleados SET nombre = '$txtNombre' , 
+        $editarEmpleados = $conn->prepare(" UPDATE empleados SET documento = '$documento', nombre = '$txtNombre' , 
         apellidoP = '$txtApellidoP', apellidoM = '$txtApellidoM', correo = '$txtCorreo'
         WHERE id = '$txtId' ");
 

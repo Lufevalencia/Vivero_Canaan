@@ -33,6 +33,13 @@
                                 <!-- <br> -->
 
                                 <div class="form-group col-md-12">
+                                    <label for="documento">Documento</label>
+                                    <input type="text" class="form-control" require name="documento" id="documento" placeholder="" value="<?php echo $documento ?>">
+                                    <br>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
                                     <label for="txtNombre">Nombre(s)</label>
                                     <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
                                     <br>
@@ -105,7 +112,8 @@
 
                     <tr>
                         <th scope="col">Foto</th>
-                        <th scope="col">Identificacion</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Primer Apellido</th>
                         <th scope="col">Segundo Apellido</th>
@@ -135,6 +143,7 @@
                                 </td>
 
                                 <td> <?php echo $empleado['id']        ?> </td>
+                                <td> <?php echo $empleado['documento']        ?> </td>
                                 <td> <?php echo $empleado['nombre']    ?> </td>
                                 <td> <?php echo $empleado['apellidoP'] ?> </td>
                                 <td> <?php echo $empleado['apellidoM'] ?> </td>
@@ -145,6 +154,7 @@
                                 <form action="" method="post">
 
                                     <input type="hidden" name="txtId" value="<?php echo $empleado['id'];  ?>">
+                                    <input type="hidden" name="documento" value="<?php echo $empleado['documento'];  ?>">
                                     <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
                                     <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
                                     <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">

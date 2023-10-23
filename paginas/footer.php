@@ -5,7 +5,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Vivero Canaán 2023</span><br>
+            <span>Copyright &copy; Servicios Tecnológicos Luxsa 2023</span><br>
             <!-- <span> Centro De Comercio y Turismo</span> -->
         </div>
     </div>

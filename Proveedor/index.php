@@ -1,4 +1,4 @@
-<?php include 'codeCliente.php'; ?>
+<?php include 'codeProveedor.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Cliente</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Proveedor</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -28,15 +28,15 @@
 
                             <div class="form-row">
 
-                            <input type="hidden" require name="Id_cli" id="Id_cli" placeholder="" value="<?php echo $Id_cli ?>">
+                            <input type="hidden" require name="Id_prov" id="Id_prov" placeholder="" value="<?php echo $Id_prov ?>">
 
 
 
                                 <div class="form-group col-md-12">
 
-                                    <label for="Tipo_doc_cli" >Tipo de documento</label>
+                                    <label for="Tipo_doc_prov" >Tipo de documento</label>
 
-                                    <select name="Tipo_doc_cli" id="Tipo_doc_cli" class="form-control">
+                                    <select name="Tipo_doc_prov" id="Tipo_doc_prov" class="form-control">
                                         <option value="CC">Seleccione el Tipo de Documento</option>
                                         <option value="CC">Cedula de Ciudadania</option>
                                         <option value="TI">Tarjeta de Identidad</option>
@@ -47,34 +47,28 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Doc_cli ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_cli " id="Doc_cli " placeholder="" value="<?php echo $Doc_cli  ?>">
+                                    <label for="Doc_prov ">Documento</label>
+                                    <input type="text" class="form-control" require name="Doc_prov " id="Doc_prov " placeholder="" value="<?php echo $Doc_prov  ?>">
                                     <br>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Nom_cli">Nombre(s)</label>
-                                    <input type="text" class="form-control" require name="Nom_cli" id="Nom_cli" placeholder="" value="<?php echo $Nom_cli ?>">
+                                    <label for="Nom_prov">Nombre(s)</label>
+                                    <input type="text" class="form-control" require name="Nom_prov" id="Nom_prov" placeholder="" value="<?php echo $Nom_prov ?>">
 
                                 </div>
 
                                 
                                 <div class="form-group col-md-12">
-                                    <label for="Ape_cli">Apellido(s)</label>
-                                    <input type="text" class="form-control" require name="Ape_cli" id="Ape_cli" placeholder="" value="<?php echo $Ape_cli ?>">
+                                    <label for="Ape_prov">Apellido(s)</label>
+                                    <input type="text" class="form-control" require name="Ape_prov" id="Ape_prov" placeholder="" value="<?php echo $Ape_prov ?>">
 
                                 </div>
 
-                               
+                                         
                                 <div class="form-group col-md-12">
-                                    <label for="Direc_cli">Dirección</label>
-                                    <input type="text" class="form-control" require name="Direc_cli" id="Direc_cli" placeholder="" value="<?php echo $Direc_cli ?>">
-
-                                </div>
-                                
-                                <div class="form-group col-md-12">
-                                    <label for="Tel_cli">Teléfono</label>
-                                    <input type="text" class="form-control" require name="Tel_cli" id="Tel_cli" placeholder="" value="<?php echo $Tel_cli ?>">
+                                    <label for="Tel_prov">Teléfono</label>
+                                    <input type="text" class="form-control" require name="Tel_prov" id="Tel_prov" placeholder="" value="<?php echo $Tel_prov ?>">
 
                                 </div>
 
@@ -99,7 +93,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background: linear-gradient(to right,  #527502, #527502);">
-                Agregar Cliente
+                Agregar Proveedor
             </button>
 
 
@@ -123,7 +117,6 @@
                         <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellidos</th>
-                        <th scope="col">Dirección</th>
                         <th scope="col">Teléfono</th>
 
                         <th scope="col">Seleccionar</th>
@@ -135,9 +128,9 @@
 
                     <?php
                     /* Prefunto que si la variable listaEmpleados tiene algun contenido */
-                    if ($listaCliente->num_rows > 0) {
+                    if ($listaProveedor->num_rows > 0) {
 
-                        foreach ($listaCliente as $cliente) {
+                        foreach ($listaProveedor as $proveedor) {
 
 
                     ?>
@@ -145,24 +138,23 @@
                             <tr>
 
                               
-                                <td> <?php echo $cliente['Id_cli']        ?> </td>
-                                <td> <?php echo $cliente['Tipo_doc_cli']    ?> </td>
-                                <td> <?php echo $cliente['Doc_cli']        ?> </td>
-                                <td> <?php echo $cliente['Nom_cli'] ?> </td>
-                                <td> <?php echo $cliente['Ape_cli'] ?> </td>
-                                <td> <?php echo $cliente['Direc_cli']    ?> </td>
-                                <td> <?php echo $cliente['Tel_cli']    ?> </td>
+                                <td> <?php echo $proveedor['Id_prov']        ?> </td>
+                                <td> <?php echo $proveedor['Tipo_doc_prov']    ?> </td>
+                                <td> <?php echo $proveedor['Doc_prov']        ?> </td>
+                                <td> <?php echo $proveedor['Nom_prov'] ?> </td>
+                                <td> <?php echo $proveedor['Ape_prov'] ?> </td>
+                                <td> <?php echo $proveedor['Tel_prov']    ?> </td>
 
 
 
                                 <form action="" method="post">
-                                    <input type="hidden" name="Id_cli" value="<?php echo $cliente['Id_cli'];  ?>">
-                                    <input type="hidden" name="Tipo_doc_cli" value="<?php echo $cliente['Tipo_doc_cli'];  ?>">
-                                    <input type="hidden" name="Doc_cli" value="<?php echo $cliente['Doc_cli'];  ?>">
-                                    <input type="hidden" name="Nom_cli" value="<?php echo $cliente['Nom_cli'];  ?>">
-                                    <input type="hidden" name="Ape_cli" value="<?php echo $cliente['Ape_cli'];  ?>">
-                                    <input type="hidden" name="Direc_cli" value="<?php echo $cliente['Direc_cli'];  ?>">
-                                    <input type="hidden" name="Tel_cli" value="<?php echo $cliente['Tel_cli'];  ?>">
+                                    <input type="hidden" name="Id_prov" value="<?php echo $proveedor['Id_prov'];  ?>">
+                                    <input type="hidden" name="Tipo_doc_prov" value="<?php echo $proveedor['Tipo_doc_prov'];  ?>">
+                                    <input type="hidden" name="Doc_prov" value="<?php echo $proveedor['Doc_prov'];  ?>">
+                                    <input type="hidden" name="Nom_prov" value="<?php echo $proveedor['Nom_prov'];  ?>">
+                                    <input type="hidden" name="Ape_prov" value="<?php echo $proveedor['Ape_prov'];  ?>">
+                                    <input type="hidden" name="Tel_prov" value="<?php echo $proveedor['Tel_prov'];  ?>">
+                                    
                     
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
