@@ -8,8 +8,8 @@ include("../Conexion/conexion.php");
 
 //Recibimos las variables enviadas
 $Id_fac = (isset($_POST['Id_fac'])) ? $_POST['Id_fac'] : "";
+$Id_cli = (isset($_POST['Id_cli'])) ? $_POST['Id_cli'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
-$id_cli = (isset($_POST['id_cli'])) ? $_POST['id_cli'] : "";
 $Id_prov = (isset($_POST['Id_prov'])) ? $_POST['Id_prov'] : "";
 $Id_art = (isset($_POST['Id_art'])) ? $_POST['Id_art'] : "";
 $Cantidad = (isset($_POST['Cantidad'])) ? $_POST['Cantidad'] : "";
@@ -31,8 +31,8 @@ switch ($accion) {
                 */
 
                 $insercionFactura = $conn->prepare(
-                "INSERT INTO factura ( id, id_cli, Id_prov, Id_art, Cantidad, Form_pag) 
-                VALUES ('$id','$id_cliente','$Id_prov', '$Id_art', '$Cantidad', '$Form_pag' )"
+                "INSERT INTO factura ( Id_fac, Id_cli, id,  Id_prov, Id_art, Cantidad, Form_pag) 
+                               VALUES ('$Id_fac','$Id_cli','$id','$Id_prov', '$Id_art', '$Cantidad', '$Form_pag' )"
              );
 
 
@@ -71,7 +71,7 @@ switch ($accion) {
 
 
 /* Consultamos todas las Facturas  */
-$consultaFactura = $conn->prepare("SELECT * FROM factura");
+$consultaFactura = $conn->prepare("SELECT * FROM factura INNER JOIN cliente ON factura.Id_cli = cliente.Id_cli INNER JOIN empleados ON factura.id = empleados.id INNER JOIN proveedor ON factura.Id_prov = proveedor.Id_prov INNER JOIN articulo ON factura.Id_art =articulo.Id_art");
 $consultaFactura->execute();
 $listaFactura = $consultaFactura->get_result();
 

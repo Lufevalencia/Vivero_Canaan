@@ -28,8 +28,6 @@
 
                             <div class="form-row">
 
-                            <input type="hidden" require name="Id_prov" id="Id_prov" placeholder="" value="<?php echo $Id_prov ?>">
-
 
 
                                 <div class="form-group col-md-12">
@@ -47,8 +45,8 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Doc_prov ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_prov " id="Doc_prov " placeholder="" value="<?php echo $Doc_prov  ?>">
+                                    <label for="Id_prov">Documento</label>
+                                    <input type="text" class="form-control" require name="Id_prov" id="Id_prov" placeholder="" value="<?php echo $Id_prov  ?>">
                                     <br>
                                 </div>
 
@@ -112,7 +110,6 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th scope="col">Código</th>
                         <th scope="col">Tipo documento</th>
                         <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
@@ -138,9 +135,9 @@
                             <tr>
 
                               
-                                <td> <?php echo $proveedor['Id_prov']        ?> </td>
+                                
                                 <td> <?php echo $proveedor['Tipo_doc_prov']    ?> </td>
-                                <td> <?php echo $proveedor['Doc_prov']        ?> </td>
+                                <td> <?php echo $proveedor['Id_prov']        ?> </td>
                                 <td> <?php echo $proveedor['Nom_prov'] ?> </td>
                                 <td> <?php echo $proveedor['Ape_prov'] ?> </td>
                                 <td> <?php echo $proveedor['Tel_prov']    ?> </td>
@@ -148,9 +145,8 @@
 
 
                                 <form action="" method="post">
-                                    <input type="hidden" name="Id_prov" value="<?php echo $proveedor['Id_prov'];  ?>">
                                     <input type="hidden" name="Tipo_doc_prov" value="<?php echo $proveedor['Tipo_doc_prov'];  ?>">
-                                    <input type="hidden" name="Doc_prov" value="<?php echo $proveedor['Doc_prov'];  ?>">
+                                    <input type="hidden" name="Id_prov" value="<?php echo $proveedor['Id_prov'];  ?>">
                                     <input type="hidden" name="Nom_prov" value="<?php echo $proveedor['Nom_prov'];  ?>">
                                     <input type="hidden" name="Ape_prov" value="<?php echo $proveedor['Ape_prov'];  ?>">
                                     <input type="hidden" name="Tel_prov" value="<?php echo $proveedor['Tel_prov'];  ?>">

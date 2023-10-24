@@ -51,7 +51,7 @@ switch ($accion) {
     case 'btnModificar':
 
         $editarArticulo = $conn->prepare(" UPDATE articulo SET
-        Nom_art = '$Nom_art', Precio = '$Precio',
+        Nom_art = '$Nom_art', Precio = '$Precio'
         WHERE Id_art = '$Id_art' ");
 
         

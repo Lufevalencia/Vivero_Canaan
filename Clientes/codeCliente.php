@@ -7,9 +7,9 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
-$Id_cli  = (isset($_POST['Id_cli '])) ? $_POST['Id_cli '] : "";
+
 $Tipo_doc_cli = (isset($_POST['Tipo_doc_cli'])) ? $_POST['Tipo_doc_cli'] : "";
-$Doc_cli  = (isset($_POST['Doc_cli '])) ? $_POST['Doc_cli '] : "";
+$Id_cli  = (isset($_POST['Id_cli'])) ? $_POST['Id_cli'] : "";
 $Nom_cli = (isset($_POST['Nom_cli'])) ? $_POST['Nom_cli'] : "";
 $Ape_cli = (isset($_POST['Ape_cli'])) ? $_POST['Ape_cli'] : "";
 $Direc_cli = (isset($_POST['Direc_cli'])) ? $_POST['Direc_cli'] : "";
@@ -34,9 +34,8 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionCliente = $conn->prepare(
-                    "INSERT INTO cliente (Tipo_doc_cli, Doc_cli, 
-                Nom_cli, Ape_cli, Direc_cli, Tel_cli ) 
-                VALUES ('$Tipo_doc_cli ','$Doc_cli','$Nom_cli','$Ape_cli','$Direc_cli','$Tel_cli')"
+                    "INSERT INTO cliente (Tipo_doc_cli, Id_cli, Nom_cli, Ape_cli, Direc_cli, Tel_cli ) 
+                                VALUES ('$Tipo_doc_cli','$Id_cli','$Nom_cli','$Ape_cli','$Direc_cli','$Tel_cli')"
                 );
 
 
@@ -59,8 +58,8 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarCliente = $conn->prepare(" UPDATE cliente SET Tipo_doc_cli = '$Tipo_doc_cli' ,  Doc_cli = '$Doc_cli',
-        Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli', Direc_cli = '$Direc_cli', Tel_cli = '$Tel_cli',
+        $editarCliente = $conn->prepare(" UPDATE cliente SET Tipo_doc_cli = '$Tipo_doc_cli' , 
+        Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli', Direc_cli = '$Direc_cli', Tel_cli = '$Tel_cli'
         WHERE Id_cli = '$Id_cli' ");
 
      

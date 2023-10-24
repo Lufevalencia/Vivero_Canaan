@@ -8,7 +8,7 @@
 
 
         <!-- enctype="multipart/form-data" se utiliza para tratar la fotografia -->
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" >
 
 
 
@@ -28,7 +28,7 @@
 
                             <div class="form-row">
 
-                            <input type="hidden" require name="Id_cli" id="Id_cli" placeholder="" value="<?php echo $Id_cli ?>">
+                            
 
 
 
@@ -47,8 +47,8 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Doc_cli ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_cli " id="Doc_cli " placeholder="" value="<?php echo $Doc_cli  ?>">
+                                    <label for="Id_cli">Documento</label>
+                                    <input type="text" class="form-control" require name="Id_cli" id="Id_cli" placeholder="" value="<?php echo $Id_cli  ?>">
                                     <br>
                                 </div>
 
@@ -118,7 +118,7 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th scope="col">Código</th>
+                      
                         <th scope="col">Tipo documento</th>
                         <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
@@ -145,9 +145,8 @@
                             <tr>
 
                               
-                                <td> <?php echo $cliente['Id_cli']        ?> </td>
                                 <td> <?php echo $cliente['Tipo_doc_cli']    ?> </td>
-                                <td> <?php echo $cliente['Doc_cli']        ?> </td>
+                                <td> <?php echo $cliente['Id_cli']        ?> </td>
                                 <td> <?php echo $cliente['Nom_cli'] ?> </td>
                                 <td> <?php echo $cliente['Ape_cli'] ?> </td>
                                 <td> <?php echo $cliente['Direc_cli']    ?> </td>
@@ -156,9 +155,9 @@
 
 
                                 <form action="" method="post">
-                                    <input type="hidden" name="Id_cli" value="<?php echo $cliente['Id_cli'];  ?>">
+                                  
                                     <input type="hidden" name="Tipo_doc_cli" value="<?php echo $cliente['Tipo_doc_cli'];  ?>">
-                                    <input type="hidden" name="Doc_cli" value="<?php echo $cliente['Doc_cli'];  ?>">
+                                    <input type="hidden" name="Id_cli" value="<?php echo $cliente['Id_cli'];  ?>">
                                     <input type="hidden" name="Nom_cli" value="<?php echo $cliente['Nom_cli'];  ?>">
                                     <input type="hidden" name="Ape_cli" value="<?php echo $cliente['Ape_cli'];  ?>">
                                     <input type="hidden" name="Direc_cli" value="<?php echo $cliente['Direc_cli'];  ?>">

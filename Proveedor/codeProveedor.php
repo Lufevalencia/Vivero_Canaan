@@ -7,9 +7,9 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
-$Id_prov  = (isset($_POST['Id_prov '])) ? $_POST['Id_prov '] : "";
+
 $Tipo_doc_prov = (isset($_POST['Tipo_doc_prov'])) ? $_POST['Tipo_doc_prov'] : "";
-$Doc_prov  = (isset($_POST['Doc_prov '])) ? $_POST['Doc_prov '] : "";
+$Id_prov  = (isset($_POST['Id_prov'])) ? $_POST['Id_prov'] : "";
 $Nom_prov = (isset($_POST['Nom_prov'])) ? $_POST['Nom_prov'] : "";
 $Ape_prov = (isset($_POST['Ape_prov'])) ? $_POST['Ape_prov'] : "";
 $Tel_prov = (isset($_POST['Tel_prov'])) ? $_POST['Tel_prov'] : "";
@@ -33,9 +33,9 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionProveedor = $conn->prepare(
-                    "INSERT INTO proveedor (Tipo_doc_prov, Doc_prov, 
-                Nom_prov, Ape_prov, Tel_prov ) 
-                VALUES ('$Tipo_doc_prov ','$Doc_prov','$Nom_prov','$Ape_prov','$Tel_prov')"
+                    "INSERT INTO proveedor (Tipo_doc_prov, Id_prov, 
+                Nom_prov, Ape_prov, Tel_prov) 
+                VALUES ('$Tipo_doc_prov','$Id_prov','$Nom_prov','$Ape_prov','$Tel_prov')"
                 );
 
 
@@ -58,8 +58,8 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarProveedor = $conn->prepare(" UPDATE proveedor SET Tipo_doc_prov = '$Tipo_doc_prov' ,  Doc_prov = '$Doc_prov',
-        Nom_prov = '$Nom_prov', Ape_prov = '$Ape_prov',Tel_prov = '$Tel_prov',
+        $editarProveedor = $conn->prepare(" UPDATE proveedor SET Tipo_doc_prov = '$Tipo_doc_prov',
+        Nom_prov = '$Nom_prov', Ape_prov = '$Ape_prov',Tel_prov = '$Tel_prov'
         WHERE Id_prov = '$Id_prov' ");
 
      

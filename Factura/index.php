@@ -48,7 +48,7 @@
                                         if ($listaCliente->num_rows > 0) {
                                             foreach ($listaCliente as $cliente) {
                                                 echo " <option value='' hidden > Seleccione el Cliente</option> ";
-                                                echo " <option value='{$cliente['Id_cli']}'> {$cliente['Doc_cli']} {$cliente['Nom_cli']} {$cliente['Ape_cli']} </option> ";
+                                                echo " <option value='{$cliente['Id_cli']}'> {$cliente['Id_cli']} {$cliente['Nom_cli']} {$cliente['Ape_cli']} </option> ";
                                             }
                                         } else {
 
@@ -66,10 +66,10 @@
                                 <!-- Selector de EMPLEADOS -->
                                 <div class="form-group col-md-12">
 
-                                    <label for="txtId">Empleado</label>
+                                    <label for="id">Empleado</label>
 
 
-                                    <select name="txtId" id="txtId" class="form-control">
+                                    <select name="id" id="id" class="form-control">
 
                                         <?php
 
@@ -166,7 +166,7 @@
                                     <label for="Form_pag">Forma de pago</label>
                                     
                                     <select name="Form_pag" id="Form_pag" class="form-control">
-                                        <option value="Efectivo">Seleccione Forma de Pago</option>
+                                        <option value="#">Seleccione Forma de Pago</option>
                                         <option value="Efectivo">Efectivo</option>
                                         <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
                                         <option value="Transferencia">Transferencia</option>
@@ -239,10 +239,10 @@
 
 
                                 <td> <?php echo $factura['Id_fac']  ?> </td>
-                                <td> <?php echo $factura['id'] ?> </td>
-                                <td> <?php echo $factura['id_cli']  ?> </td>
-                                <td> <?php echo $factura['Id_prov']     ?> </td>
-                                <td> <?php echo $factura['Id_art']     ?> </td>
+                                <td> <?php echo $factura['id']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
+                                <td> <?php echo $factura['Id_cli']," ", $factura['Nom_cli'], " ", $factura['Ape_cli']  ?> </td>
+                                <td> <?php echo $factura['Id_prov']," ", $factura['Nom_prov'], " ", $factura['Ape_prov']   ?> </td>
+                                <td> <?php echo $factura['Id_art']," ", $factura['Nom_art'], " ", $factura['Precio']       ?> </td>
                                 <td> <?php echo $factura['Cantidad']     ?> </td>
                                 <td> <?php echo $factura['Form_pag']     ?> </td>
 
@@ -252,7 +252,7 @@
 
                                     <input type="hidden" name="Id_fac" value="<?php echo $factura['Id_fac'];  ?>">
                                     <input type="hidden" name="id" value="<?php echo $factura['id'];  ?>">
-                                    <input type="hidden" name="id_cli" value="<?php echo $factura['id_cli'];  ?>">
+                                    <input type="hidden" name="Id_cli" value="<?php echo $factura['Id_cli'];  ?>">
                                     <input type="hidden" name="Id_prov" value="<?php echo $factura['Id_prov'];  ?>">
                                     <input type="hidden" name="Id_art" value="<?php echo $factura['Id_art'];  ?>">
                                     <input type="hidden" name="Cantidad" value="<?php echo $factura['Cantidad'];  ?>">
