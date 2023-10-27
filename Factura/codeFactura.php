@@ -31,8 +31,8 @@ switch ($accion) {
                 */
 
                 $insercionFactura = $conn->prepare(
-                "INSERT INTO factura ( Id_fac, Id_cli, id,  Id_prov, Id_art, Cantidad, Form_pag) 
-                               VALUES ('$Id_fac','$Id_cli','$id','$Id_prov', '$Id_art', '$Cantidad', '$Form_pag' )"
+                "INSERT INTO factura (Id_fac, Id_cli, id, Id_prov, Id_art, Cantidad, Form_pag) 
+                               VALUES ('$Id_fac','$Id_cli','$id','$Id_prov','$Id_art', '$Cantidad','$Form_pag')"
              );
 
 
@@ -71,7 +71,11 @@ switch ($accion) {
 
 
 /* Consultamos todas las Facturas  */
-$consultaFactura = $conn->prepare("SELECT * FROM factura INNER JOIN cliente ON factura.Id_cli = cliente.Id_cli INNER JOIN empleados ON factura.id = empleados.id INNER JOIN proveedor ON factura.Id_prov = proveedor.Id_prov INNER JOIN articulo ON factura.Id_art =articulo.Id_art");
+$consultaFactura = $conn->prepare("SELECT * FROM factura 
+INNER JOIN cliente ON factura.Id_cli = cliente.Id_cli 
+INNER JOIN empleados ON factura.id = empleados.id 
+INNER JOIN proveedor ON factura.Id_prov = proveedor.Id_prov 
+INNER JOIN articulo ON factura.Id_art =articulo.Id_art");
 $consultaFactura->execute();
 $listaFactura = $consultaFactura->get_result();
 

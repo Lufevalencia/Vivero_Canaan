@@ -79,7 +79,7 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarEmpleados = $conn->prepare(" UPDATE empleados SET documento = '$documento', nombre = '$txtNombre' , 
+        $editarEmpleados = $conn->prepare(" UPDATE empleados SET documento = '$documento', nombre = '$txtNombre', 
         apellidoP = '$txtApellidoP', apellidoM = '$txtApellidoM', correo = '$txtCorreo'
         WHERE id = '$txtId' ");
 
