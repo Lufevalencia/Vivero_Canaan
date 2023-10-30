@@ -35,7 +35,7 @@
                                     <label for="Tipo_doc_prov" >Tipo de documento</label>
 
                                     <select name="Tipo_doc_prov" id="Tipo_doc_prov" class="form-control">
-                                        <option value="CC">Seleccione el Tipo de Documento</option>
+                                        <option value="#">Seleccione el Tipo de Documento</option>
                                         <option value="CC">Cedula de Ciudadania</option>
                                         <option value="TI">Tarjeta de Identidad</option>
                                         <option value="Ce">Cedula de Extranjería</option>
@@ -63,10 +63,45 @@
 
                                 </div>
 
+
+                                
+                                <div class="form-group col-md-12">
+
+                                    <label for="Insumo">Insumo</label>
+
+                                    <select name="Insumo" id="Insumo" class="form-control">
+                                        <option value="#">Seleccione el Insumo</option>
+                                        <option value="Bolsas">Bolsas</option>
+                                        <option value="Tierra">Tierra</option>
+                                        <option value="Insecticida">Insecticida</option>
+                                        <option value="Fungicida">Fungicida</option>
+                                        <option value="Fertilizante">Fertilizante</option>
+                                        <option value="Invernaderos">Invernaderos</option>
+                                        <option value="Herramientas">Herramientas</option>
+                                        <option value="Equipos de fumigación">Equipos de fumigación</option>
+                                        <option value="Maquinaria para manejo de sustrato">Maquinaria para manejo de sustrato</option>
+                                    </select>
+                                   
+
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="Direc_pro">Dirección</label>
+                                    <input type="text" class="form-control" require name="Direc_pro" id="Direc_pro" placeholder="" value="<?php echo $Direc_pro ?>">
+
+                                </div>
+
                                          
                                 <div class="form-group col-md-12">
                                     <label for="Tel_prov">Teléfono</label>
                                     <input type="text" class="form-control" require name="Tel_prov" id="Tel_prov" placeholder="" value="<?php echo $Tel_prov ?>">
+
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="Correo_pro">Correo electrónico</label>
+                                    <input type="text" class="form-control" require name="Correo_pro" id="Correo_pro" placeholder="" value="<?php echo $Correo_pro ?>">
 
                                 </div>
 
@@ -114,7 +149,10 @@
                         <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellidos</th>
+                        <th scope="col">Insumo</th>
+                        <th scope="col">Dirección</th>
                         <th scope="col">Teléfono</th>
+                        <th scope="col">Correo electrónico</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -140,7 +178,10 @@
                                 <td> <?php echo $proveedor['Id_prov']        ?> </td>
                                 <td> <?php echo $proveedor['Nom_prov'] ?> </td>
                                 <td> <?php echo $proveedor['Ape_prov'] ?> </td>
+                                <td> <?php echo $proveedor['Insumo'] ?> </td>
+                                <td> <?php echo $proveedor['Direc_pro'] ?> </td>
                                 <td> <?php echo $proveedor['Tel_prov']    ?> </td>
+                                <td> <?php echo $proveedor['Correo_pro'] ?> </td>
 
 
 
@@ -149,7 +190,10 @@
                                     <input type="hidden" name="Id_prov" value="<?php echo $proveedor['Id_prov'];  ?>">
                                     <input type="hidden" name="Nom_prov" value="<?php echo $proveedor['Nom_prov'];  ?>">
                                     <input type="hidden" name="Ape_prov" value="<?php echo $proveedor['Ape_prov'];  ?>">
+                                    <input type="hidden" name="Insumo" value="<?php echo $proveedor['Insumo'];  ?>">
+                                    <input type="hidden" name="Direc_pro" value="<?php echo $proveedor['Direc_pro'];  ?>">
                                     <input type="hidden" name="Tel_prov" value="<?php echo $proveedor['Tel_prov'];  ?>">
+                                    <input type="hidden" name="Correo_pro" value="<?php echo $proveedor['Correo_pro'];  ?>">
                                     
                     
 

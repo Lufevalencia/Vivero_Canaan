@@ -32,6 +32,9 @@
                                 <input type="hidden" require name="txtId" id="txtId" placeholder="" value="<?php echo $txtId ?>">
                                 <!-- <br> -->
 
+
+
+
                                 <div class="form-group col-md-12">
                                     <label for="documento">Documento</label>
                                     <input type="text" class="form-control" require name="documento" id="documento" placeholder="" value="<?php echo $documento ?>">
@@ -47,25 +50,54 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoP">Primer Apellido </label>
+                                    <label for="txtApellidoP">Apellido(s) </label>
                                     <input type="text" class="form-control" require name="txtApellidoP" id="txtApellidoP" placeholder="" value="<?php echo $txtApellidoP ?>">
 
                                 </div>
 
+
+                                
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Segundo Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
+
+                                    <label for="Cargo">Cargo</label>
+
+                                    <select name="Cargo" id="Cargo" class="form-control">
+                                        <option value="#">Seleccione el Cargo</option>
+                                        <option value="Operario de Campo">Operario de Campo</option>
+                                        <option value="Jefe de Grupo">Jefe de Grupo</option>
+                                        <option value="Administrador">Administrador</option>
+                                        <option value="Auxiliar Contable y Administrativo">Auxiliar Contable y Administrativo</option>
+                                        <option value="Contador">Contador</option>
+                                        <option value="Gerente Operativo">Gerente Operativo</option>
+                                        <option value="Gerente Administrativo">Gerente Administrativo</option>
+                                        
+                                    </select>
+                                   
+
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="direccion">Dirección</label>
+                                    <input type="text" class="form-control" require name="direccion" id="direccion" placeholder="" value="<?php echo $direccion ?>">
+
+                                </div>
+
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="text" class="form-control" require name="telefono" id="telefono" placeholder="" value="<?php echo $telefono ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtCorreo">Correo</label>
+                                    <label for="txtCorreo">Correo electrónico</label>
                                     <input type="email" class="form-control" require name="txtCorreo" id="txtCorreo" placeholder="" value="<?php echo $txtCorreo ?>">
                                     <br>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="foto">foto</label>
+                                    <label for="foto">Foto</label>
                                     <!-- El atributo accept image .... solo acepta formatos de imagen -->
                                     <input type="file" class="form-control" require accept="image/*" name="foto" id="foto" placeholder="" value="<?php echo $foto ?>">
                                     <br>
@@ -115,9 +147,11 @@
                         <th scope="col">Código</th>
                         <th scope="col">Documento</th>
                         <th scope="col">Nombres</th>
-                        <th scope="col">Primer Apellido</th>
-                        <th scope="col">Segundo Apellido</th>
-                        <th scope="col">Correo</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Correo electrónico</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -146,7 +180,9 @@
                                 <td> <?php echo $empleado['documento']        ?> </td>
                                 <td> <?php echo $empleado['nombre']    ?> </td>
                                 <td> <?php echo $empleado['apellidoP'] ?> </td>
-                                <td> <?php echo $empleado['apellidoM'] ?> </td>
+                                <td> <?php echo $empleado['Cargo'] ?> </td>
+                                <td> <?php echo $empleado['direccion'] ?> </td>
+                                <td> <?php echo $empleado['telefono']        ?> </td>
                                 <td> <?php echo $empleado['correo']    ?> </td>
 
 
@@ -157,7 +193,9 @@
                                     <input type="hidden" name="documento" value="<?php echo $empleado['documento'];  ?>">
                                     <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
                                     <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">
+                                    <input type="hidden" name="Cargo" value="<?php echo $empleado['Cargo'];  ?>">
+                                    <input type="hidden" name="direccion" value="<?php echo $empleado['direccion'];  ?>">
+                                    <input type="hidden" name="telefono" value="<?php echo $empleado['telefono'];  ?>">
                                     <input type="hidden" name="txtCorreo" value="<?php echo $empleado['correo'];  ?>">
                                     <input type="hidden" name="foto" value="<?php echo $empleado['foto'];  ?>">
 

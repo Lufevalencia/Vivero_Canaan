@@ -12,8 +12,10 @@ $Tipo_doc_prov = (isset($_POST['Tipo_doc_prov'])) ? $_POST['Tipo_doc_prov'] : ""
 $Id_prov  = (isset($_POST['Id_prov'])) ? $_POST['Id_prov'] : "";
 $Nom_prov = (isset($_POST['Nom_prov'])) ? $_POST['Nom_prov'] : "";
 $Ape_prov = (isset($_POST['Ape_prov'])) ? $_POST['Ape_prov'] : "";
+$Insumo = (isset($_POST['Insumo'])) ? $_POST['Insumo'] : "";
+$Direc_pro = (isset($_POST['Direc_pro'])) ? $_POST['Direc_pro'] : "";
 $Tel_prov = (isset($_POST['Tel_prov'])) ? $_POST['Tel_prov'] : "";
-
+$Correo_pro = (isset($_POST['Correo_pro'])) ? $_POST['Correo_pro'] : "";
 
 
 $accion = (isset($_POST['accion'])) ? $_POST['accion'] : "";
@@ -34,8 +36,8 @@ switch ($accion) {
                 */
                 $insercionProveedor = $conn->prepare(
                     "INSERT INTO proveedor (Tipo_doc_prov, Id_prov, 
-                Nom_prov, Ape_prov, Tel_prov) 
-                VALUES ('$Tipo_doc_prov','$Id_prov','$Nom_prov','$Ape_prov','$Tel_prov')"
+                Nom_prov, Ape_prov, Insumo, Direc_pro, Tel_prov, Correo_pro) 
+                VALUES ('$Tipo_doc_prov','$Id_prov','$Nom_prov','$Ape_prov', '$Insumo','$Direc_pro','$Tel_prov','$Correo_pro')"
                 );
 
 
@@ -59,7 +61,7 @@ switch ($accion) {
     case 'btnModificar':
 
         $editarProveedor = $conn->prepare(" UPDATE proveedor SET Tipo_doc_prov = '$Tipo_doc_prov',
-        Nom_prov = '$Nom_prov', Ape_prov = '$Ape_prov',Tel_prov = '$Tel_prov'
+        Nom_prov = '$Nom_prov', Ape_prov = '$Ape_prov', Insumo = '$Insumo', Direc_pro = '$Direc_pro', Tel_prov = '$Tel_prov', Correo_pro = '$Correo_pro'
         WHERE Id_prov = '$Id_prov' ");
 
      

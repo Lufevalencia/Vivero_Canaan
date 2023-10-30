@@ -14,6 +14,7 @@ $Nom_cli = (isset($_POST['Nom_cli'])) ? $_POST['Nom_cli'] : "";
 $Ape_cli = (isset($_POST['Ape_cli'])) ? $_POST['Ape_cli'] : "";
 $Direc_cli = (isset($_POST['Direc_cli'])) ? $_POST['Direc_cli'] : "";
 $Tel_cli = (isset($_POST['Tel_cli'])) ? $_POST['Tel_cli'] : "";
+$Correo_cli = (isset($_POST['Correo_cli'])) ? $_POST['Correo_cli'] : "";
 
 
 
@@ -34,8 +35,8 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionCliente = $conn->prepare(
-                    "INSERT INTO cliente (Tipo_doc_cli, Id_cli, Nom_cli, Ape_cli, Direc_cli, Tel_cli) 
-                                VALUES ('$Tipo_doc_cli','$Id_cli','$Nom_cli','$Ape_cli','$Direc_cli','$Tel_cli')"
+                    "INSERT INTO cliente (Tipo_doc_cli, Id_cli, Nom_cli, Ape_cli, Direc_cli, Tel_cli, Correo_cli) 
+                                VALUES ('$Tipo_doc_cli','$Id_cli','$Nom_cli','$Ape_cli','$Direc_cli','$Tel_cli','$Correo_cli')"
                 );
 
 
@@ -58,8 +59,8 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarCliente = $conn->prepare(" UPDATE cliente SET Tipo_doc_cli = '$Tipo_doc_cli' , 
-        Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli', Direc_cli = '$Direc_cli', Tel_cli = '$Tel_cli'
+        $editarCliente = $conn->prepare(" UPDATE cliente SET Tipo_doc_cli = '$Tipo_doc_cli', 
+        Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli', Direc_cli = '$Direc_cli', Tel_cli = '$Tel_cli', Correo_cli = '$Correo_cli'
         WHERE Id_cli = '$Id_cli' ");
 
      

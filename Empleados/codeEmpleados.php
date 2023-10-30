@@ -11,7 +11,9 @@ $txtId = (isset($_POST['txtId'])) ? $_POST['txtId'] : "";
 $documento = (isset($_POST['documento'])) ? $_POST['documento'] : "";
 $txtNombre = (isset($_POST['txtNombre'])) ? $_POST['txtNombre'] : "";
 $txtApellidoP = (isset($_POST['txtApellidoP'])) ? $_POST['txtApellidoP'] : "";
-$txtApellidoM = (isset($_POST['txtApellidoM'])) ? $_POST['txtApellidoM'] : "";
+$Cargo = (isset($_POST['Cargo'])) ? $_POST['Cargo'] : "";
+$direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : "";
+$telefono = (isset($_POST['telefono'])) ? $_POST['telefono'] : "";
 $txtCorreo = (isset($_POST['txtCorreo'])) ? $_POST['txtCorreo'] : "";
 
 $foto = (isset($_FILES['foto']["name"])) ? $_FILES['foto']["name"] : "";
@@ -48,9 +50,9 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionEmpleados = $conn->prepare(
-                    "INSERT INTO empleados(documento, nombre, apellidoP, 
-                apellidoM, correo, foto) 
-                VALUES ('$documento','$txtNombre','$txtApellidoP','$txtApellidoM','$txtCorreo','$foto')"
+                    "INSERT INTO empleados(documento, nombre, apellidoP, Cargo,
+                direccion, telefono, correo, foto) 
+                VALUES ('$documento','$txtNombre','$txtApellidoP','$Cargo','$direccion','$telefono','$txtCorreo','$foto')"
                 );
 
 
@@ -80,7 +82,7 @@ switch ($accion) {
     case 'btnModificar':
 
         $editarEmpleados = $conn->prepare(" UPDATE empleados SET documento = '$documento', nombre = '$txtNombre', 
-        apellidoP = '$txtApellidoP', apellidoM = '$txtApellidoM', correo = '$txtCorreo'
+        apellidoP = '$txtApellidoP', Cargo = '$Cargo', direccion = '$direccion', telefono = '$telefono', correo = '$txtCorreo'
         WHERE id = '$txtId' ");
 
         /* Aca solo esta actualizando la fotografia */

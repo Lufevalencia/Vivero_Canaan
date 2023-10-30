@@ -32,6 +32,14 @@
                             <input type="hidden" require name="Id_fac" id="Id_fac" placeholder="" value="<?php echo $Id_fac ?>">
 
 
+                            
+                            <div class="form-group col-md-12">
+                                    <label for="Cantidad">Fecha</label>
+                                    <input type="date" class="form-control" require name="Fecha" id="Fecha" value="<?php echo $Fecha ?>">
+                                    <br>
+                                </div>
+
+
                                   
 
                                  <!-- INICIO SELECTOR CLIENTE -->
@@ -210,7 +218,7 @@
                 <thead class="thead-dark">
 
                     <tr>
-
+                        <th scope="col">Fecha</th>
                         <th scope="col">Código</th>
                         <th scope="col">Empleado</th>
                         <th scope="col">Cliente</th>
@@ -237,7 +245,7 @@
                             <tr>
 
 
-
+                                <td> <?php echo $factura['Fecha']  ?> </td>
                                 <td> <?php echo $factura['Id_fac']  ?> </td>
                                 <td> <?php echo $factura['id']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
                                 <td> <?php echo $factura['Id_cli']," ", $factura['Nom_cli'], " ", $factura['Ape_cli']  ?> </td>
@@ -249,7 +257,7 @@
 
                                 <!-- Este Formulario se utiliza para editar los registros -->
                                 <form action="" method="post">
-
+                                    <input type="hidden" name="Fecha" value="<?php echo $factura['Fecha'];  ?>">
                                     <input type="hidden" name="Id_fac" value="<?php echo $factura['Id_fac'];  ?>">
                                     <input type="hidden" name="id" value="<?php echo $factura['id'];  ?>">
                                     <input type="hidden" name="Id_cli" value="<?php echo $factura['Id_cli'];  ?>">

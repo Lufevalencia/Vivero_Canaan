@@ -7,6 +7,7 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
+$Fecha = (isset($_POST['Fecha'])) ? $_POST['Fecha'] : "";
 $Id_fac = (isset($_POST['Id_fac'])) ? $_POST['Id_fac'] : "";
 $Id_cli = (isset($_POST['Id_cli'])) ? $_POST['Id_cli'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
@@ -31,8 +32,8 @@ switch ($accion) {
                 */
 
                 $insercionFactura = $conn->prepare(
-                "INSERT INTO factura (Id_fac, Id_cli, id, Id_prov, Id_art, Cantidad, Form_pag) 
-                               VALUES ('$Id_fac','$Id_cli','$id','$Id_prov','$Id_art', '$Cantidad','$Form_pag')"
+                "INSERT INTO factura (Fecha, Id_fac, Id_cli, id, Id_prov, Id_art, Cantidad, Form_pag) 
+                               VALUES ('$Fecha','$Id_fac','$Id_cli','$id','$Id_prov','$Id_art', '$Cantidad','$Form_pag')"
              );
 
 

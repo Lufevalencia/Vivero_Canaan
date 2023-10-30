@@ -65,6 +65,9 @@
 
                                 </div>
 
+                                
+                                
+
                                
                                 <div class="form-group col-md-12">
                                     <label for="Direc_cli">Dirección</label>
@@ -75,6 +78,12 @@
                                 <div class="form-group col-md-12">
                                     <label for="Tel_cli">Teléfono</label>
                                     <input type="text" class="form-control" require name="Tel_cli" id="Tel_cli" placeholder="" value="<?php echo $Tel_cli ?>">
+
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="Correo_cli">Correo electrónico</label>
+                                    <input type="text" class="form-control" require name="Correo_cli" id="Correo_cli" placeholder="" value="<?php echo $Correo_cli ?>">
 
                                 </div>
 
@@ -125,6 +134,7 @@
                         <th scope="col">Apellidos</th>
                         <th scope="col">Dirección</th>
                         <th scope="col">Teléfono</th>
+                        <th scope="col">Correo electrónico</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -151,6 +161,7 @@
                                 <td> <?php echo $cliente['Ape_cli'] ?> </td>
                                 <td> <?php echo $cliente['Direc_cli']    ?> </td>
                                 <td> <?php echo $cliente['Tel_cli']    ?> </td>
+                                <td> <?php echo $cliente['Correo_cli']    ?> </td>
 
 
 
@@ -162,6 +173,7 @@
                                     <input type="hidden" name="Ape_cli" value="<?php echo $cliente['Ape_cli'];  ?>">
                                     <input type="hidden" name="Direc_cli" value="<?php echo $cliente['Direc_cli'];  ?>">
                                     <input type="hidden" name="Tel_cli" value="<?php echo $cliente['Tel_cli'];  ?>">
+                                    <input type="hidden" name="Correo_cli" value="<?php echo $cliente['Correo_cli'];  ?>">
                     
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
