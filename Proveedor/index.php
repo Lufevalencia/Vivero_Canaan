@@ -101,7 +101,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="Correo_pro">Correo electrónico</label>
-                                    <input type="email" class="form-control" require name="Correo_pro" id="Correo_pro" placeholder="" value="<?php echo $Correo_pro ?>">
+                                    <input type="text" class="form-control" require name="Correo_pro" id="Correo_pro" placeholder="" value="<?php echo $Correo_pro ?>">
 
                                 </div>
 
